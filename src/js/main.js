@@ -17,7 +17,7 @@ function renderMessage(message) {
   if (message.type === 'message') {
     messagesList.insertAdjacentHTML(
       'beforeend',
-      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="../img/icons.svg#tail"></use></svg><p class="message-text">${message.message}</p><p class="message-time">${timeString}</p></div>`
+      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text">${message.message}</p><p class="message-time">${timeString}</p></div>`
     );
   }
 
@@ -29,7 +29,7 @@ function renderMessage(message) {
       .join('');
     messagesList.insertAdjacentHTML(
       'beforeend',
-      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="../img/icons.svg#tail"></use></svg><p class="message-text question">${message.message}</p><p class="message-time">${timeString}</p></div><div class="answer-buttons-wrap">${answerBtns}</div>`
+      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text question">${message.message}</p><p class="message-time">${timeString}</p></div><div class="answer-buttons-wrap">${answerBtns}</div>`
     );
 
     const answerButtons = document.querySelectorAll('.answer-button');
@@ -47,7 +47,7 @@ function handleAnswerClick(event) {
 
   messagesList.insertAdjacentHTML(
     'beforeend',
-    `<div class="response"><p class="message-text">${event.target.textContent}</p><svg class="response-tail" width="17" height="21"><use href="../img/icons.svg#tail"></use></svg></div>`
+    `<div class="response"><p class="message-text">${event.target.textContent}</p><svg class="response-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg></div>`
   );
 
   const currentQuestion = event.target.closest('.answer-buttons-wrap');
