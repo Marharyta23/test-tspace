@@ -1,7 +1,7 @@
 :root {
-  --font-family: "Roboto", sans-serif;
-  --second-family: "SF Pro Text", sans-serif;
-  --third-family: "Inter", sans-serif;
+  --font-family: 'Roboto', sans-serif;
+  --second-family: 'SF Pro Text', sans-serif;
+  --third-family: 'Inter', sans-serif;
 }
 /* Reset styles */
 h1,
@@ -40,7 +40,6 @@ img {
 }
 .container {
   width: 100%;
-  margin: 0 auto;
 }
 * {
   box-sizing: border-box;
@@ -58,7 +57,7 @@ body {
   min-width: 320px;
   max-width: 550px;
   background-color: #000;
-  background-image: url("../img/gradient.svg"), url("../img/background.png");
+  background-image: url('../img/gradient.svg'), url('../img/background.png');
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 100vw;

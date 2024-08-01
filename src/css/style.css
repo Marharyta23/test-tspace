@@ -1,4 +1,4 @@
-@import url("./index.css");
+@import url('./index.css');
 
 .header {
   width: 100%;
@@ -216,7 +216,7 @@
   transform: rotate(-90deg);
 }
 .animate__animated {
-  animation-duration: 1s;
+  animation-duration: 2000ms;
   animation-fill-mode: both;
 }
 .animate__slideInUp {

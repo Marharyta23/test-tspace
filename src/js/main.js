@@ -32,10 +32,6 @@ function renderMessage(message) {
       `<div class="message"><svg class="message-tail" width="17" height="21"><use href="../img/icons.svg#tail"></use></svg><p class="message-text question">${message.message}</p><p class="message-time">${timeString}</p></div><div class="answer-buttons-wrap">${answerBtns}</div>`
     );
 
-    setTimeout(() => {
-      messagesList.scrollTop = messagesList.scrollHeight;
-    }, 200);
-
     const answerButtons = document.querySelectorAll('.answer-button');
     answerButtons.forEach(button => {
       button.addEventListener('click', handleAnswerClick);
@@ -146,3 +142,9 @@ function checkForm() {
 const intervalId = setInterval(checkForm, 1000);
 
 init();
+
+const observer = new MutationObserver(() => {
+  messagesList.scrollTop = messagesList.scrollHeight;
+});
+
+observer.observe(messagesList, { childList: true });
