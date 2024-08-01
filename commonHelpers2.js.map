@@ -1,0 +1,1 @@
+{"version":3,"file":"commonHelpers2.js","sources":["../src/js/thanks.js"],"sourcesContent":["const dataObj = JSON.parse(sessionStorage.getItem('dataObj'));\n\nconsole.log(dataObj);\n"],"names":["dataObj"],"mappings":"mCAAA,MAAMA,EAAU,KAAK,MAAM,eAAe,QAAQ,SAAS,CAAC,EAE5D,QAAQ,IAAIA,CAAO"}
