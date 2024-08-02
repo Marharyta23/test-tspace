@@ -142,7 +142,7 @@ function checkForm() {
 
       sessionStorage.setItem('dataObj', JSON.stringify(dataObj));
       form.reset();
-      window.location.href = 'thanks.html';
+      window.location.href = 'success.html';
     });
 
     clearInterval(intervalId);
