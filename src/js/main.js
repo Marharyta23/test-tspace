@@ -115,12 +115,13 @@ function init() {
 function renderTable() {
   messagesList.insertAdjacentHTML(
     'beforeend',
-    '<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><form class="form"><input type="text" name="name" id="name" class="form-input" placeholder="Імʼя" required/><input type="text" name="surname" id="surname" class="form-input" placeholder="Прізвище" required/><input type="email" name="email" id="email" class="form-input" placeholder="Email" required/><input type="number" name="phone" id="phone" class="form-input" placeholder="Телефон"required/><button type="submit" class="form-submit-btn">Надіслати</button></form></div>'
+    '<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><form class="form"><input type="text" name="name" id="name" class="form-input" placeholder="Імʼя" required minlength="2" maxlength="50"/><input type="text" name="surname" id="surname" class="form-input" placeholder="Прізвище" required minlength="2" maxlength="50"/><input type="email" name="email" id="email" class="form-input" placeholder="Email" required/><input type="tel" name="phone" id="phone" class="form-input" placeholder="Телефон" required minlength="2" maxlength="50"/><button type="submit" class="form-submit-btn">Надіслати</button></form></div>'
   );
 }
 
 function checkForm() {
   const form = document.querySelector('.form');
+  const phoneRegex = /^\+?(\d[\d-.()\s]*){7,}$/;
 
   if (form) {
     let dataObj = {};
@@ -130,6 +131,14 @@ function checkForm() {
       for (const [key, value] of formData) {
         dataObj[key] = value;
       }
+
+      const phoneNumber = dataObj['phone'];
+
+      if (!phoneRegex.test(phoneNumber)) {
+        alert('Please enter a valid phone number');
+        return;
+      }
+
       sessionStorage.setItem('dataObj', JSON.stringify(dataObj));
       form.reset();
       window.location.href = 'thanks.html';
@@ -144,7 +153,9 @@ const intervalId = setInterval(checkForm, 1000);
 init();
 
 const observer = new MutationObserver(() => {
-  messagesList.scrollTop = messagesList.scrollHeight;
+  messagesList.scrollTop =
+    messagesList.scrollHeight - messagesList.clientHeight;
+  messagesList.scrollTo({ top: messagesList.scrollHeight, behavior: 'smooth' });
 });
 
 observer.observe(messagesList, { childList: true });

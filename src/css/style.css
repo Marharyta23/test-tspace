@@ -216,7 +216,7 @@
   transform: rotate(-90deg);
 }
 .animate__animated {
-  animation-duration: 2000ms;
+  animation-duration: 2500ms;
   animation-fill-mode: both;
 }
 .animate__slideInUp {
@@ -252,7 +252,7 @@
 }
 @keyframes slideInUp {
   0% {
-    transform: translateY(100%);
+    transform: translateY(-100%);
     opacity: 0;
   }
   100% {

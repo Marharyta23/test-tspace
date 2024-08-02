@@ -62,3 +62,10 @@ body {
   background-position: top right;
   background-size: 100vw;
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .container {
+    background-image: url('../img/gradient.svg'),
+      url('../img/background-2x.png');
+  }
+}
