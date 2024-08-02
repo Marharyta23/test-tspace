@@ -1,3 +1,4 @@
+import 'animate.css';
 import messages from '../message-data.json';
 
 const messagesList = document.querySelector('.messages');
@@ -17,7 +18,7 @@ function renderMessage(message) {
   if (message.type === 'message') {
     messagesList.insertAdjacentHTML(
       'beforeend',
-      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text">${message.message}</p><p class="message-time">${timeString}</p></div>`
+      `<div class="message animate__backInUp"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text">${message.message}</p><p class="message-time">${timeString}</p></div>`
     );
   }
 
@@ -29,7 +30,7 @@ function renderMessage(message) {
       .join('');
     messagesList.insertAdjacentHTML(
       'beforeend',
-      `<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text question">${message.message}</p><p class="message-time">${timeString}</p></div><div class="answer-buttons-wrap">${answerBtns}</div>`
+      `<div class="message animate__backInUp"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><p class="message-text question">${message.message}</p><p class="message-time">${timeString}</p></div><div class="answer-buttons-wrap">${answerBtns}</div>`
     );
 
     const answerButtons = document.querySelectorAll('.answer-button');
@@ -47,7 +48,7 @@ function handleAnswerClick(event) {
 
   messagesList.insertAdjacentHTML(
     'beforeend',
-    `<div class="response"><p class="message-text">${event.target.textContent}</p><svg class="response-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg></div>`
+    `<div class="response animate__backInUp"><p class="message-text">${event.target.textContent}</p><svg class="response-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg></div>`
   );
 
   const currentQuestion = event.target.closest('.answer-buttons-wrap');
@@ -115,7 +116,7 @@ function init() {
 function renderTable() {
   messagesList.insertAdjacentHTML(
     'beforeend',
-    '<div class="message"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><form class="form"><input type="text" name="name" id="name" class="form-input" placeholder="Імʼя" required minlength="2" maxlength="50"/><input type="text" name="surname" id="surname" class="form-input" placeholder="Прізвище" required minlength="2" maxlength="50"/><input type="email" name="email" id="email" class="form-input" placeholder="Email" required/><input type="tel" name="phone" id="phone" class="form-input" placeholder="Телефон" required minlength="2" maxlength="50"/><button type="submit" class="form-submit-btn">Надіслати</button></form></div>'
+    '<div class="message animate__backInUp"><svg class="message-tail" width="17" height="21"><use href="./img/icons.svg#tail"></use></svg><form class="form"><input type="text" name="name" id="name" class="form-input" placeholder="Імʼя" required minlength="2" maxlength="50"/><input type="text" name="surname" id="surname" class="form-input" placeholder="Прізвище" required minlength="2" maxlength="50"/><input type="email" name="email" id="email" class="form-input" placeholder="Email" required/><input type="tel" name="phone" id="phone" class="form-input" placeholder="Телефон" required minlength="2" maxlength="50"/><button type="submit" class="form-submit-btn">Надіслати</button></form></div>'
   );
 }
 

@@ -2,6 +2,7 @@
   --font-family: 'Roboto', sans-serif;
   --second-family: 'SF Pro Text', sans-serif;
   --third-family: 'Inter', sans-serif;
+  --animate-duration: 1500ms;
 }
 /* Reset styles */
 h1,
